@@ -1,7 +1,7 @@
 package com.excample.kitsu.data.remote.apiservices
 
-import com.excample.kitsu.data.models.AnimeResponse
-import com.excample.kitsu.data.models.DataItem
+import com.excample.kitsu.data.models.first.AnimeResponse
+import com.excample.kitsu.data.models.first.DataItem
 import com.excample.kitsu.data.models.detail.AnimeDetail
 import retrofit2.http.GET
 import retrofit2.http.Path

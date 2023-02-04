@@ -1,4 +1,4 @@
-package com.excample.kitsu.ui.fragments.simpleAnime
+package com.excample.kitsu.ui.fragments.firstAnime
 
 import android.os.Bundle
 import android.view.View

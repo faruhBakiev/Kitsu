@@ -1,4 +1,4 @@
-package com.excample.kitsu.data.models
+package com.excample.kitsu.data.models.first
 
 import com.google.gson.annotations.SerializedName
 

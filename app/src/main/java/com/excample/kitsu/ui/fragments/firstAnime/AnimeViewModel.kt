@@ -1,4 +1,4 @@
-package com.excample.kitsu.ui.fragments.simpleAnime
+package com.excample.kitsu.ui.fragments.firstAnime
 
 import androidx.lifecycle.ViewModel
 import com.excample.kitsu.data.repositories.AnimeRepository
