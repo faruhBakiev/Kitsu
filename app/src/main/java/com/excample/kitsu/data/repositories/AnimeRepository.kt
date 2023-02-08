@@ -1,17 +1,19 @@
 package com.excample.kitsu.data.repositories
 
 import androidx.lifecycle.liveData
+import com.excample.kitsu.base.BaseRepository
 import com.excample.kitsu.data.remote.apiservices.AnimeApiService
+import com.excample.kitsu.utils.Resource
 import javax.inject.Inject
 
-class AnimeRepository @Inject constructor(private val service: AnimeApiService) {
+class AnimeRepository @Inject constructor(private val service: AnimeApiService) : BaseRepository() {
 
-    fun getAnime() = liveData{
-      emit(service.fetchAnime())
+    fun getAnime() = doRequest {
+        service.fetchAnime()
     }
 
-    fun getSingleAnime(id : Int) = liveData {
-        emit(service.fetchSingleAnime(id))
+    fun getSingleAnime(id: Int) = doRequest {
+        service.fetchSingleAnime(id)
     }
-
 }
+

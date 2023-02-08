@@ -10,7 +10,14 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">#3B2B38</item>
         <!-- Customize your theme here. -->
     </style>
+
+        <style name="Tab">
+            <item name="textAllCaps">false</item>
+            <item name="android:textStyle">bold</item>
+            <item name="android:textSize">16sp</item>
+        </style>
+
 </resources>

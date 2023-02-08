@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.excample.kitsu.data.models.first.DataItem
+import com.excample.kitsu.data.models.anime.DataItem
 import com.excample.kitsu.databinding.AnimeItemBinding
 
 class AnimeAdapter(private val clickListener: (id: String) -> Unit) :
@@ -15,17 +15,17 @@ class AnimeAdapter(private val clickListener: (id: String) -> Unit) :
     inner class AnimeViewHolder(private val binding: AnimeItemBinding) :
         ViewHolder(binding.root) {
 
-        init {
-            itemView.setOnClickListener {
-                getItem(bindingAdapterPosition).apply { clickListener(id) }
-            }
-        }
-
-        fun onBind(item: DataItem) {
+        fun onBind(item: DataItem) = with(binding) {
             Glide.with(binding.ivAnime.context)
                 .load(item.attributes.posterImage.original)
                 .into(binding.ivAnime)
             binding.tvName.text = item.attributes.titles.enJp
+        }
+
+        init {
+            itemView.setOnClickListener {
+                getItem(bindingAdapterPosition).apply { clickListener(id) }
+            }
         }
     }
 

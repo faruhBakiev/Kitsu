@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3B2B38"
-    tools:context=".ui.fragments.detailAnime.AnimeDetailFragment">
+    tools:context=".ui.fragments.anime.detailAnime.AnimeDetailFragment">
 
     <TextView
-        android:id="@+id/text_detail"
+        android:id="@+id/anime_detail_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"
@@ -18,7 +18,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/image_detail"
+        android:id="@+id/anime_detail_im"
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_gravity="center"

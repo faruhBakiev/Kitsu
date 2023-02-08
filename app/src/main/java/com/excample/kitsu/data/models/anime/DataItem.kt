@@ -1,6 +1,5 @@
-package com.excample.kitsu.data.models.first
+package com.excample.kitsu.data.models.anime
 
-import com.excample.kitsu.data.models.first.Attributes
 import com.google.gson.annotations.SerializedName
 
 data class DataItem(

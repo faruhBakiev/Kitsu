@@ -1,10 +1,12 @@
 package com.excample.kitsu.data.remote
 
 import com.excample.kitsu.data.remote.apiservices.AnimeApiService
+import com.excample.kitsu.data.remote.apiservices.MangaApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.util.concurrent.TimeUnit
 
 class RetrofitClient {
@@ -27,4 +29,6 @@ class RetrofitClient {
     private fun provideLoggingInterceptor() = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
     fun provideAnimeApiService() = retrofitClient.create(AnimeApiService::class.java)
+
+    fun provideMangaApiService() = retrofitClient.create(MangaApiService::class.java)
 }
