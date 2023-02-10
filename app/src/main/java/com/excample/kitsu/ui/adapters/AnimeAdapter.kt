@@ -2,20 +2,21 @@ package com.excample.kitsu.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.excample.kitsu.data.models.anime.DataItem
+import com.excample.kitsu.data.models.anime.AnimeItem
 import com.excample.kitsu.databinding.AnimeItemBinding
 
 class AnimeAdapter(private val clickListener: (id: String) -> Unit) :
-    ListAdapter<DataItem, AnimeAdapter.AnimeViewHolder>(diffUtil) {
+    PagingDataAdapter<AnimeItem, AnimeAdapter.AnimeViewHolder>(diffUtil) {
 
     inner class AnimeViewHolder(private val binding: AnimeItemBinding) :
         ViewHolder(binding.root) {
 
-        fun onBind(item: DataItem) = with(binding) {
+        fun onBind(item: AnimeItem) = with(binding) {
             Glide.with(binding.ivAnime.context)
                 .load(item.attributes.posterImage.original)
                 .into(binding.ivAnime)
@@ -24,7 +25,7 @@ class AnimeAdapter(private val clickListener: (id: String) -> Unit) :
 
         init {
             itemView.setOnClickListener {
-                getItem(bindingAdapterPosition).apply { clickListener(id) }
+                getItem(bindingAdapterPosition)?.apply { clickListener(id) }
             }
         }
     }
@@ -46,12 +47,12 @@ class AnimeAdapter(private val clickListener: (id: String) -> Unit) :
 
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<DataItem>() {
-            override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
+        val diffUtil = object : DiffUtil.ItemCallback<AnimeItem>() {
+            override fun areItemsTheSame(oldItem: AnimeItem, newItem: AnimeItem): Boolean {
                 return oldItem.attributes.titles == newItem.attributes.titles
             }
 
-            override fun areContentsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
+            override fun areContentsTheSame(oldItem: AnimeItem, newItem: AnimeItem): Boolean {
                 return oldItem == newItem
             }
         }

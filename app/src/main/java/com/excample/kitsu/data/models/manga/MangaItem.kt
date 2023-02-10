@@ -1,8 +1,8 @@
-package com.excample.kitsu.data.models.anime
+package com.excample.kitsu.data.models.manga
 
 import com.google.gson.annotations.SerializedName
 
-data class DataItem(
+data class MangaItem(
     @SerializedName("attributes")
     val attributes: Attributes,
     @SerializedName("id")

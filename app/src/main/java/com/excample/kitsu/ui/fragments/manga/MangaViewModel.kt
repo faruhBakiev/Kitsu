@@ -1,15 +1,16 @@
-package com.excample.kitsu.ui.fragments.anime
+package com.excample.kitsu.ui.fragments.manga
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.excample.kitsu.base.BaseViewModel
 import com.excample.kitsu.data.repositories.AnimeRepository
+import com.excample.kitsu.data.repositories.MangaRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class AnimeViewModel @Inject constructor(private val repository: AnimeRepository) : BaseViewModel() {
+class MangaViewModel @Inject constructor(private val repository: MangaRepository) : BaseViewModel() {
 
-    fun getAnime() = repository.getAnime().cachedIn(viewModelScope)
+    fun getManga() = repository.getManga().cachedIn(viewModelScope)
 }

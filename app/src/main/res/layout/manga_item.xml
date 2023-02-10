@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="190dp"
+    app:cardCornerRadius="10dp">
+
+    <ImageView
+        android:id="@+id/iv_manga"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3B2B38"
+        android:padding="3dp"
+        android:paddingStart="10dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/tv_manga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:paddingBottom="10dp"
+        android:text="name_manga"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+</com.google.android.material.card.MaterialCardView>
