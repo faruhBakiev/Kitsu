@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/img"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.signin.SignInFragment">
+
+
+    <EditText
+        android:id="@+id/email_et"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/oval"
+        android:hint="Email"
+        android:paddingStart="10dp"
+        android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/password_et"
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="45dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/oval"
+        android:hint="Password"
+        android:paddingStart="10dp"
+        android:textColor="@color/black" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_in_btn"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="175dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="Sign in to your account"
+        app:cornerRadius="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="KITSU"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+</FrameLayout>

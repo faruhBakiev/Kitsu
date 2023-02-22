@@ -5,7 +5,11 @@ import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import com.excample.kitsu.utils.Resource
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 
 abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
     @LayoutRes layoutId: Int
@@ -21,15 +25,15 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
         setupRequests()
     }
 
-    protected open fun initialize(){
+    protected open fun initialize() {
     }
 
-    protected open fun setupListeners(){
+    protected open fun setupListeners() {
     }
 
-    protected open fun setupSubscribes(){
+    protected open fun setupSubscribes() {
     }
 
-    protected open fun setupRequests(){
+    protected open fun setupRequests() {
     }
 }

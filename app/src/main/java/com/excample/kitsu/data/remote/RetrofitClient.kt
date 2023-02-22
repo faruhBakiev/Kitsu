@@ -1,7 +1,9 @@
 package com.excample.kitsu.data.remote
 
+import com.excample.kitsu.data.TokenInterceptor
 import com.excample.kitsu.data.remote.apiservices.AnimeApiService
 import com.excample.kitsu.data.remote.apiservices.MangaApiService
+import com.excample.kitsu.data.remote.apiservices.SignInApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,6 +15,7 @@ class RetrofitClient {
 
     private val okHttpClient = OkHttpClient()
         .newBuilder()
+        .addInterceptor(TokenInterceptor())
         .addInterceptor(provideLoggingInterceptor())
         .callTimeout(30, TimeUnit.SECONDS)
         .connectTimeout(30, TimeUnit.SECONDS)
@@ -31,4 +34,6 @@ class RetrofitClient {
     fun provideAnimeApiService() = retrofitClient.create(AnimeApiService::class.java)
 
     fun provideMangaApiService() = retrofitClient.create(MangaApiService::class.java)
+
+    fun providerSignInApiService(): SignInApiService = retrofitClient.create(SignInApiService::class.java)
 }

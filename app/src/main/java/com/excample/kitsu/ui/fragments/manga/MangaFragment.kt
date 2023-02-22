@@ -40,6 +40,7 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(
         binding.recyclerViewManga.adapter = mangaAdapter
     }
 
+
     private fun onSecondClickListener(id: String) {
         findNavController().navigate(
             PagerFragmentDirections.actionPagerFragmentToMangaDetailFragment(id.toInt())
