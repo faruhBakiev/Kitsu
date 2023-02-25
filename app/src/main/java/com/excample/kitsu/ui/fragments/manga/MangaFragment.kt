@@ -7,10 +7,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.excample.kitsu.R
 import com.excample.kitsu.base.BaseFragment
 import com.excample.kitsu.databinding.FragmentMangaBinding
-import com.excample.kitsu.extensions.toast
 import com.excample.kitsu.ui.adapters.MangaAdapter
 import com.excample.kitsu.ui.fragments.pager.PagerFragmentDirections
-import com.excample.kitsu.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -28,7 +26,7 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(
     }
 
     private fun subscribeToManga() {
-        viewModel.getManga().observe(viewLifecycleOwner){
+        viewModel.getManga().observe(viewLifecycleOwner) {
             lifecycleScope.launch {
                 mangaAdapter.submitData(it)
             }
@@ -40,11 +38,9 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(
         binding.recyclerViewManga.adapter = mangaAdapter
     }
 
-
     private fun onSecondClickListener(id: String) {
         findNavController().navigate(
             PagerFragmentDirections.actionPagerFragmentToMangaDetailFragment(id.toInt())
         )
     }
 }
-

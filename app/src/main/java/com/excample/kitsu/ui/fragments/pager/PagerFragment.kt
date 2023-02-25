@@ -12,12 +12,10 @@ import com.google.android.material.tabs.TabLayoutMediator
 class PagerFragment : Fragment(R.layout.fragment_pager) {
 
     private val binding by viewBinding (FragmentPagerBinding::bind)
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
     }
-
     private fun initialize() {
         tabLayout()
     }

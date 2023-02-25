@@ -29,7 +29,6 @@ class AnimeAdapter(private val clickListener: (id: String) -> Unit) :
             }
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
         return AnimeViewHolder(
             AnimeItemBinding.inflate(

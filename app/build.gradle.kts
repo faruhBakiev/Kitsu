@@ -10,7 +10,6 @@ plugins {
 
     // SafeArgs
     id("androidx.navigation.safeargs.kotlin")
-
 }
 
 android {
@@ -50,7 +49,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
 
     // AppCompat
-    implementation("androidx.appcompat:appcompat:1.6.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
 
     // Material Design
     implementation("com.google.android.material:material:1.8.0")
@@ -58,11 +57,7 @@ dependencies {
     // UI Components
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
-
-    // Activity
-    val activity_version = "1.6.1"
-    implementation("android.activity:activity-ktx:$activity_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 
     // Fragment
     val fragment_version = "1.5.5"

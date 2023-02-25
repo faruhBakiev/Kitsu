@@ -8,7 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SignInViewModel @Inject constructor(private val repository: PostUserDataRepository ):BaseViewModel() {
-
+class SignInViewModel @Inject constructor(private val repository: PostUserDataRepository) :
+    BaseViewModel() {
     fun postUserData(authModel: AuthModel) = repository.postUserData(authModel)
 }

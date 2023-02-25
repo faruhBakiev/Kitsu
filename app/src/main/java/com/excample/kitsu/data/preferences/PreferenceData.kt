@@ -2,10 +2,10 @@ package com.excample.kitsu.data.preferences
 
 class PreferenceData(
     private val preferences: PreferenceHelper,
-
     private val IS_AUTHORIZED: String = "is_authorized",
     private val ACCESS_TOKEN: String = "access_token",
     private val REFRESH_TOKEN: String = "refresh_token"
+
 ) {
     var isAuthorized: Boolean
         get() = preferences().getBoolean(

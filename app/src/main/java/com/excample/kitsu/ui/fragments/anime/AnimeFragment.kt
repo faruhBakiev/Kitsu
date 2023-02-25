@@ -1,7 +1,6 @@
 package com.excample.kitsu.ui.fragments.anime
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -10,10 +9,8 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.excample.kitsu.R
 import com.excample.kitsu.databinding.FragmentAnimeBinding
-import com.excample.kitsu.extensions.toast
 import com.excample.kitsu.ui.adapters.AnimeAdapter
 import com.excample.kitsu.ui.fragments.pager.PagerFragmentDirections
-import com.excample.kitsu.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -41,8 +38,6 @@ class AnimeFragment : Fragment(R.layout.fragment_anime) {
     private fun initialize() {
         binding.recyclerView.adapter = animeAdapter
     }
-
-
     private fun onClickFirstListener(id: String){
         findNavController().navigate(
             PagerFragmentDirections.actionPagerFragmentToAnimeDetailFragment(id.toInt())

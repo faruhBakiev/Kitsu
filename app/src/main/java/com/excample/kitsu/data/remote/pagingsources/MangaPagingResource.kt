@@ -13,7 +13,6 @@ const val DEFAULT_LIMIT_NUMBER = 1
 
 class MangaPagingResource constructor(private val service: MangaApiService) :
     PagingSource<Int, MangaItem>() {
-
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, MangaItem> {
         try {
             val page = params.key ?: DEFAULT_LIMIT_NUMBER
