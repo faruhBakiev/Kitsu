@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         setupNavigation()
     }
 
@@ -28,10 +27,10 @@ class MainActivity : AppCompatActivity() {
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
         when {
             userPreferencesData.isAuthorized -> {
-                navGraph.setStartDestination(R.id.pagerFragment)
+                navGraph.setStartDestination(R.id.pagerFlowFragment)
             }
             else -> {
-                navGraph.setStartDestination(R.id.signInFragment)
+                navGraph.setStartDestination(R.id.signInFlowFragment)
             }
         }
         navController.graph = navGraph

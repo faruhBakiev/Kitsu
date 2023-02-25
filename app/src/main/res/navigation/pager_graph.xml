@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/pagerFragment">
+
+    <fragment
+        android:id="@+id/pagerFragment"
+        android:name="com.excample.kitsu.ui.fragments.pager.PagerFragment"
+        android:label="fragment_pager"
+        tools:layout="@layout/fragment_pager" >
+        <action
+            android:id="@+id/action_pagerFragment_to_animeDetailFragment"
+            app:destination="@id/animeDetailFragment" />
+        <action
+            android:id="@+id/action_pagerFragment_to_mangaDetailFragment2"
+            app:destination="@id/mangaDetailFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/animeDetailFragment"
+        android:name="com.excample.kitsu.ui.fragments.anime.detailAnime.AnimeDetailFragment"
+        android:label="fragment_anime_detail"
+        tools:layout="@layout/fragment_anime_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/mangaDetailFragment2"
+        android:name="com.excample.kitsu.ui.fragments.manga.detailManga.MangaDetailFragment"
+        android:label="fragment_manga_detail"
+        tools:layout="@layout/fragment_manga_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

@@ -9,14 +9,14 @@ import retrofit2.http.Query
 
 interface AnimeApiService {
 
-    @GET("anime")
+    @GET("edge/anime")
     suspend fun fetchAnime(
         @Query("page[limit]") limit: Int,
         @Query("page[offset]") offset: Int
     ): AnimeResponse<AnimeItem>
 
-    @GET("anime/{id}")
-    suspend fun fetchSingleAnime(
+    @GET("edge/anime/{id}")
+    suspend fun fetchAnimeById(
         @Path("id") id: Int
     ): AnimeDetail
 }

@@ -3,48 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/signInFragment">
+    app:startDestination="@id/signInFlowFragment">
 
     <fragment
-        android:id="@+id/animeDetailFragment"
-        android:name="com.excample.kitsu.ui.fragments.anime.detailAnime.AnimeDetailFragment"
-        android:label="fragment_anime_detail"
-        tools:layout="@layout/fragment_anime_detail">
-        <argument
-            android:name="id"
-            android:defaultValue="0"
-            app:argType="integer" />
+        android:id="@+id/signInFlowFragment"
+        android:name="com.excample.kitsu.ui.fragments.signin.flow.SignInFlowFragment"
+        android:label="fragment_sign_in_flow"
+        tools:layout="@layout/fragment_sign_in_flow" >
+        <action
+            android:id="@+id/action_signInFlowFragment_to_pagerFlowFragment"
+            app:destination="@id/pagerFlowFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mangaDetailFragment"
-        android:name="com.excample.kitsu.ui.fragments.manga.detailManga.MangaDetailFragment"
-        android:label="fragment_manga_detail"
-        tools:layout="@layout/fragment_manga_detail" >
-        <argument
-            android:name="id"
-            android:defaultValue="0"
-            app:argType="integer"/>
-    </fragment>
-    <fragment
-        android:id="@+id/pagerFragment"
-        android:name="com.excample.kitsu.ui.fragments.pager.PagerFragment"
-        android:label="fragment_pager"
-        tools:layout="@layout/fragment_pager" >
-        <action
-            android:id="@+id/action_pagerFragment_to_animeDetailFragment"
-            app:destination="@id/animeDetailFragment" />
-        <action
-            android:id="@+id/action_pagerFragment_to_mangaDetailFragment"
-            app:destination="@id/mangaDetailFragment" />
-
-    </fragment>
-    <fragment
-        android:id="@+id/signInFragment"
-        android:name="com.excample.kitsu.ui.fragments.signin.SignInFragment"
-        android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" >
-        <action
-            android:id="@+id/action_signInFragment_to_pagerFragment"
-            app:destination="@id/pagerFragment" />
-    </fragment>
+        android:id="@+id/pagerFlowFragment"
+        android:name="com.excample.kitsu.ui.fragments.pager.flow.PagerFlowFragment"
+        android:label="fragment_pager_flow"
+        tools:layout="@layout/fragment_pager_flow" />
 </navigation>

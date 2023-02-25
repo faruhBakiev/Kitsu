@@ -32,15 +32,13 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(
             }
         }
     }
-
     override fun initialize() {
-        super.initialize()
         binding.recyclerViewManga.adapter = mangaAdapter
     }
 
     private fun onSecondClickListener(id: String) {
         findNavController().navigate(
-            PagerFragmentDirections.actionPagerFragmentToMangaDetailFragment(id.toInt())
+            PagerFragmentDirections.actionPagerFragmentToMangaDetailFragment2(id.toInt())
         )
     }
 }

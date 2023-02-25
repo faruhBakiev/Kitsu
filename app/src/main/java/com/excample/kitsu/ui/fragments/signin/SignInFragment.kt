@@ -2,6 +2,7 @@ package com.excample.kitsu.ui.fragments.signin
 
 import android.util.Log
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.excample.kitsu.R
@@ -38,9 +39,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding, SignInViewModel>(
                             accessToken = token.accessToken
                             refreshToken = token.refreshToken
                         }
-                        findNavController().navigate(
-                            R.id.action_signInFragment_to_pagerFragment
-                        )
+                        requireActivity().findNavController(R.id.fragment_container)
+                            .navigate(R.id.action_signInFlowFragment_to_pagerFlowFragment)
                     }
                 })
         }

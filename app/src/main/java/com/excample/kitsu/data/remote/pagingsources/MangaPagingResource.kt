@@ -8,7 +8,6 @@ import com.excample.kitsu.data.models.manga.MangaItem
 import com.excample.kitsu.data.remote.apiservices.MangaApiService
 import java.io.IOException
 
-
 const val DEFAULT_LIMIT_NUMBER = 1
 
 class MangaPagingResource constructor(private val service: MangaApiService) :

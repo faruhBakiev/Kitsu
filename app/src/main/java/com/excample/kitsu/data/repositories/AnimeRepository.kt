@@ -17,6 +17,6 @@ class AnimeRepository @Inject constructor(private val service: AnimeApiService) 
     }.liveData
 
     fun getSingleAnime(id: Int) = doRequest {
-        service.fetchSingleAnime(id)
+        service.fetchAnimeById(id)
     }
 }

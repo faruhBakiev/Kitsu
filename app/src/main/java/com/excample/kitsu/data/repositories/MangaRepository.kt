@@ -17,6 +17,6 @@ import javax.inject.Inject
     }.liveData
 
     fun getSingleManga(id: Int) = doRequest {
-        service.fetchSingleManga(id)
+        service.fetchMangaById(id)
     }
 }
